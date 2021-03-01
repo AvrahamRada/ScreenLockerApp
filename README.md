@@ -41,7 +41,7 @@ Add this line in the activity where you want you screen locker will appear:
 
 ```
 
-![](assets/blue.gif)
+![](assets/new_password.gif)
 
 After that check if password has not already set.
 If not, call setNewPassword. If yes, call checkPassword:
@@ -55,7 +55,7 @@ If not, call setNewPassword. If yes, call checkPassword:
 
 ```
 
-![](assets/yellow.gif)
+![](assets/check_password.gif)
 
 If you want to change the password please call changePassword:
 ```java                    
@@ -64,7 +64,7 @@ If you want to change the password please call changePassword:
 
 ```
 
-![](assets/green.gif)   
+![](assets/change_password.gif)   
 
 
           
