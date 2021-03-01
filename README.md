@@ -5,12 +5,18 @@ Final project - mobile security course
 
 ## Description:
 ```
-My library create a dynamic dialog frame to the user.
-the user just need to forward those information to the library:
- 1. user's new title.
- 2. type of dialog frame (0 - CheckBox, 1 - Radio Button and 2- switch)
- 3. user's data (as array/list of strings).
- 4. user's prefered color. 
+My library helps user adding screen locker to there app very easily.
+library support 3 kind of operation and can be added in any time and any activity of yours:
+
+1. Set new password.
+2. check that the user knows the password (before he can continue using the application).
+3. Change your current password.
+
+** In the future, i am planning to add option of slide pass on the buttons, instead of clicking the buttons like it is now.
+
+Thanks a lot to Guy ! :)
+Enjoy.
+
 ```
 
 ## Setup:
