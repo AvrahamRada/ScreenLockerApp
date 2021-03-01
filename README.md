@@ -5,8 +5,8 @@ Final project - mobile security course
 
 ## Description:
 ```
-My library helps user adding screen locker to there app very easily.
-library support 3 kind of operation and can be added in any time and any activity of yours:
+My library helps user adding screen locker to their app very easily.
+The library support 3 kind of operation and can be added in any time and any activity of yours:
 
 1. Set new password.
 2. check that the user knows the password (before he can continue using the application).
