@@ -1,7 +1,7 @@
 # ScreenLockerApp
 Final project - mobile security course
 
-[![](https://jitpack.io/v/AvrahamRada/RecyclerPickerDialogLibraryApp.svg)](https://jitpack.io/#AvrahamRada/RecyclerPickerDialogLibraryApp)
+[![](https://jitpack.io/v/AvrahamRada/ScreenLockerApp.svg)](https://jitpack.io/#AvrahamRada/ScreenLockerApp)
 
 ## Description:
 ```
@@ -27,62 +27,46 @@ Step 2. Add the dependency:
 
 ```
 dependencies {
-      implementation 'com.github.AvrahamRada:RecyclerPickerDialogLibraryApp:1.00.02'
+      implementation 'com.github.AvrahamRada:ScreenLockerApp:1.00.01'
 }
 
 
 ```
 ## Usage
 
-![](assets/green.gif)      ![](assets/yellow.gif)      ![](assets/blue.gif)
-
-:green_heart: To display green dialog with checkBox:
+Add this line in the activity where you want you screen locker will appear:
 ```java                    
 
-String[] userData = {"Option -1-", "Option -2-", "Option -3-", "Option -4-", "Option -5-"}; // User data to display
-
-MyOwnCustomDialog myFragment = new MyOwnCustomDialog("User Title", 0, userData, Color.argb(255, 153, 201, 99));
-myFragment.show(getSupportFragmentManager(), "User TAG");
+        MySharedPreferences.init(this);
 
 ```
 
-:yellow_heart: To display yellow dialog with RadioBtn:
+![](assets/blue.gif)
+
+After that check if password has not already set.
+If not, call setNewPassword. If yes, call checkPassword:
 ```java                    
 
-String[] userData = {"Option -1-", "Option -2-", "Option -3-", "Option -4-", "Option -5-"}; // User data to display
-
-MyOwnCustomDialog myFragment = new MyOwnCustomDialog("User Title", 1, userData, Color.argb(255, 248, 229, 74));
-myFragment.show(getSupportFragmentManager(), "User TAG");
+        if (MySharedPreferences.getString("password", null) == null) // Set new password
+            ScreenLock.setNewPassword(this, Constants.NUMBERS, SuccessActivity.class);
+        else {
+            ScreenLock.checkPassword(this, Constants.NUMBERS, SuccessActivity.class);
+        }
 
 ```
 
-:blue_heart: To display blue dialog with switch:
+![](assets/yellow.gif)
+
+If you want to change the password please call changePassword:
 ```java                    
 
-String[] userData = {"Option -1-", "Option -2-", "Option -3-", "Option -4-", "Option -5-"}; // User data to display
-
-MyOwnCustomDialog myFragment = new MyOwnCustomDialog("User Title", 2, userData, Color.argb(255, 124, 181, 189));
-myFragment.show(getSupportFragmentManager(), "User TAG");
+        ScreenLock.changePassword(SuccessActivity.this, Constants.NUMBERS, MainActivity.class);
 
 ```
 
-In order to get the answers/options when we click on 'SAVE' in the dialog, you need to add this to your code:
+![](assets/green.gif)   
 
-1. your class need to implements DialogInterface.OnDismissListener.
-2. to add this method:
 
-```java 
-              @Override
-              public void onDismiss(DialogInterface dialog) {
-                   ArrayList<Integer> answers = myFragment.getMyAdapter().getYourAnswers();
-                   Collections.sort(answers);
-
-                   for (Integer answer : answers) {
-                         Log.d("pttt", "answer #" + (answer + 1));
-                         Log.d("pttt", "" + myFragment.getMyAdapter().getListOfData().get(answer));
-                    }
-               }
-```
           
 ## License
 
