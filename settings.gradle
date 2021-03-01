@@ -1,0 +1,3 @@
+include ':ScreenLockLib'
+include ':app'
+rootProject.name = "ScreenLockerApp"
